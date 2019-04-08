@@ -7,12 +7,29 @@ class AuthPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Login'),
       ),
-      body: Center(
-        child: RaisedButton(
-          child: Text('LOGIN'),
-          onPressed: () {
-            Navigator.pushReplacementNamed(context, '/');
-          },
+      body: Container(
+        margin: EdgeInsets.all(10.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            TextField(
+              decoration: InputDecoration(labelText: 'Email'),
+              keyboardType: TextInputType.emailAddress,
+            ),
+            TextField(
+              decoration: InputDecoration(labelText: 'Password'),
+              obscureText: true,
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            RaisedButton(
+              child: Text('Login'),
+              onPressed: () {
+                Navigator.pushReplacementNamed(context, '/products');
+              },
+            ),
+          ],
         ),
       ),
     );
