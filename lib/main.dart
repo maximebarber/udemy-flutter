@@ -42,13 +42,13 @@ class _MyAppState extends State<MyApp> {
           brightness: Brightness.light,
           primarySwatch: Colors.deepOrange,
           accentColor: Colors.deepPurple,
-          fontFamily: 'Oswald'),
+          fontFamily: 'SFPro'),
       //home: AuthPage(),
       routes: {
         '/': (BuildContext context) => AuthPage(),
-        '/products': (BuildContext context) =>
-            ProductsPage(_products),
-        '/admin': (BuildContext context) => ProductsAdminPage(_addProduct, _deleteProduct),
+        '/products': (BuildContext context) => ProductsPage(_products),
+        '/admin': (BuildContext context) =>
+            ProductsAdminPage(_addProduct, _deleteProduct),
       },
       onGenerateRoute: (RouteSettings settings) {
         final List<String> pathElements = settings.name.split('/');
@@ -66,8 +66,7 @@ class _MyAppState extends State<MyApp> {
       },
       onUnknownRoute: (RouteSettings settings) {
         return MaterialPageRoute(
-          builder: (BuildContext context) =>
-              ProductsPage(_products),
+          builder: (BuildContext context) => ProductsPage(_products),
         );
       },
     );
